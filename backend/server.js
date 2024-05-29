@@ -14,14 +14,20 @@ app.use(express.json());
 // Routes
 const authRoutes = require('./routes/auth');
 const homeRoutes = require('./routes/home');
-const appliancesRoutes = require('./routes/appliances');
-const utilitiesRoutes = require('./routes/utilities');
-const MaintenanceTaskRoutes = require('./routes/maintenanceTasks');
+const applianceRoutes = require('./routes/appliances');
+const utilityRoutes = require('./routes/utilities');
+const maintenanceTaskRoutes = require('./routes/maintenanceTasks');
+const paintColorRoutes = require('./routes/paintColors');
+const flooringRoutes = require('./routes/floorings');
+const contractorRoutes = require('./routes/contractors');
 app.use('/api/auth', authRoutes);
 app.use('/api/home', homeRoutes);
-app.use('/api/appliances', appliancesRoutes);
-app.use('/api/utilities', utilitiesRoutes);
-app.use('/api/maintenanceTasks', MaintenanceTaskRoutes);
+app.use('/api/appliances', applianceRoutes);
+app.use('/api/utilities', utilityRoutes);
+app.use('/api/maintenanceTasks', maintenanceTaskRoutes);
+app.use('/api/paintColors', paintColorRoutes);
+app.use('/api/floorings', flooringRoutes);
+app.use('/api/contractors', contractorRoutes);
 
 // Basic route
 app.get('/', (req, res) => {

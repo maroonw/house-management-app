@@ -4,6 +4,9 @@ import './Dashboard.css';
 import AddApplianceForm from './forms/AddApplianceForm';
 import AddUtilityForm from './forms/AddUtilityForm';
 import AddMaintenanceTaskForm from './forms/AddMaintenanceTaskForm';
+import AddPaintColorForm from './forms/AddPaintColorForm';
+import AddFlooringForm from './forms/AddFlooringForm';
+import AddContractorForm from './forms/AddContractorForm';
 
 const Dashboard = () => {
   const [homeInfo, setHomeInfo] = useState({
@@ -54,6 +57,9 @@ const Dashboard = () => {
       <AddApplianceForm />
       <AddUtilityForm />
       <AddMaintenanceTaskForm />
+      <AddPaintColorForm />
+      <AddFlooringForm />
+      <AddContractorForm />
 
       <h2>Areas</h2>
       <ul>
