@@ -16,10 +16,12 @@ const authRoutes = require('./routes/auth');
 const homeRoutes = require('./routes/home');
 const appliancesRoutes = require('./routes/appliances');
 const utilitiesRoutes = require('./routes/utilities');
+const MaintenanceTaskRoutes = require('./routes/maintenanceTasks');
 app.use('/api/auth', authRoutes);
 app.use('/api/home', homeRoutes);
 app.use('/api/appliances', appliancesRoutes);
 app.use('/api/utilities', utilitiesRoutes);
+app.use('/api/maintenanceTasks', MaintenanceTaskRoutes);
 
 // Basic route
 app.get('/', (req, res) => {

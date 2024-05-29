@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Dashboard.css';
 import AddApplianceForm from './forms/AddApplianceForm';
 import AddUtilityForm from './forms/AddUtilityForm';
+import AddMaintenanceTaskForm from './forms/AddMaintenanceTaskForm';
 
 const Dashboard = () => {
   const [homeInfo, setHomeInfo] = useState({
@@ -33,12 +34,26 @@ const Dashboard = () => {
     fetchHomeInfo();
   }, []);
 
+  useEffect(() => {
+    const fetchMaintenanceTasks = async () => {
+      try {
+        const response = await axios.get('/api/maintenanceTasks');
+        setHomeInfo(prevState => ({ ...prevState, maintenanceTasks: response.data }));
+      } catch (error) {
+        console.error('Error fetching maintenance tasks:', error);
+      }
+    };
+
+    fetchMaintenanceTasks();
+  }, []);
+
   return (
     <div className="dashboard">
       <h1>Home Overview Dashboard</h1>
 
       <AddApplianceForm />
       <AddUtilityForm />
+      <AddMaintenanceTaskForm />
 
       <h2>Areas</h2>
       <ul>
