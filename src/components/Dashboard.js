@@ -7,6 +7,7 @@ import AddMaintenanceTaskForm from './forms/AddMaintenanceTaskForm';
 import AddPaintColorForm from './forms/AddPaintColorForm';
 import AddFlooringForm from './forms/AddFlooringForm';
 import AddContractorForm from './forms/AddContractorForm';
+import ServiceRecommendations from './ServiceRecommendations';
 
 const Dashboard = () => {
   const [homeInfo, setHomeInfo] = useState({
@@ -193,6 +194,8 @@ const Dashboard = () => {
         <h3>Solar Panel Info</h3>
         <p>Installed: {homeInfo.energyConsumption.solarPanelInfo.installed ? 'Yes' : 'No'}, Capacity: {homeInfo.energyConsumption.solarPanelInfo.capacity || 'N/A'}</p>
       </div>
+
+      <ServiceRecommendations />
     </div>
   );
 };

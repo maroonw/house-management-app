@@ -20,6 +20,7 @@ const maintenanceTaskRoutes = require('./routes/maintenanceTasks');
 const paintColorRoutes = require('./routes/paintColors');
 const flooringRoutes = require('./routes/floorings');
 const contractorRoutes = require('./routes/contractors');
+const recommendationRoutes = require('./routes/recommendations');
 app.use('/api/auth', authRoutes);
 app.use('/api/home', homeRoutes);
 app.use('/api/appliances', applianceRoutes);
@@ -28,6 +29,7 @@ app.use('/api/maintenanceTasks', maintenanceTaskRoutes);
 app.use('/api/paintColors', paintColorRoutes);
 app.use('/api/floorings', flooringRoutes);
 app.use('/api/contractors', contractorRoutes);
+app.use('/api/recommendations', recommendationRoutes);
 
 // Basic route
 app.get('/', (req, res) => {
