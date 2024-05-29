@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Dashboard.css';
+import AddApplianceForm from './forms/AddApplianceForm';
+import AddUtilityForm from './forms/AddUtilityForm';
 
 const Dashboard = () => {
   const [homeInfo, setHomeInfo] = useState({
@@ -34,6 +36,9 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <h1>Home Overview Dashboard</h1>
+
+      <AddApplianceForm />
+      <AddUtilityForm />
 
       <h2>Areas</h2>
       <ul>

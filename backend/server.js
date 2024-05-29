@@ -14,8 +14,12 @@ app.use(express.json());
 // Routes
 const authRoutes = require('./routes/auth');
 const homeRoutes = require('./routes/home');
+const appliancesRoutes = require('./routes/appliances');
+const utilitiesRoutes = require('./routes/utilities');
 app.use('/api/auth', authRoutes);
 app.use('/api/home', homeRoutes);
+app.use('/api/appliances', appliancesRoutes);
+app.use('/api/utilities', utilitiesRoutes);
 
 // Basic route
 app.get('/', (req, res) => {
