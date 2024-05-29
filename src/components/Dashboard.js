@@ -13,7 +13,7 @@ const Dashboard = () => {
     financialInfo: { mortgage: {}, propertyTaxes: 0, insurancePolicies: [] },
     documentation: [],
     smartHomeDevices: [],
-    safetyAndSecurity: { securitySystem: {}, fireExtinguishers: {}, smokeDetectors: {} },
+    safetyAndSecurity: { securitySystem: {}, fireExtinguishers: { locations: [] }, smokeDetectors: { locations: [] } },
     outdoorSpaces: { gardenPlants: [], lawnCareSchedule: '', poolMaintenance: {} },
     energyConsumption: { utilityUsageHistory: {}, solarPanelInfo: {} }
   });
@@ -141,9 +141,9 @@ const Dashboard = () => {
         <h3>Security System</h3>
         <p>Provider: {homeInfo.safetyAndSecurity.securitySystem.provider}, Installed: {homeInfo.safetyAndSecurity.securitySystem.installationDate}</p>
         <h3>Fire Extinguishers</h3>
-        <p>Locations: {homeInfo.safetyAndSecurity.fireExtinguishers.locations.join(', ')}, Last Inspected: {homeInfo.safetyAndSecurity.fireExtinguishers.lastInspected}</p>
+        <p>Locations: {homeInfo.safetyAndSecurity.fireExtinguishers.locations?.join(', ') || 'N/A'}, Last Inspected: {homeInfo.safetyAndSecurity.fireExtinguishers.lastInspected}</p>
         <h3>Smoke Detectors</h3>
-        <p>Locations: {homeInfo.safetyAndSecurity.smokeDetectors.locations.join(', ')}, Last Tested: {homeInfo.safetyAndSecurity.smokeDetectors.lastTested}</p>
+        <p>Locations: {homeInfo.safetyAndSecurity.smokeDetectors.locations?.join(', ') || 'N/A'}, Last Tested: {homeInfo.safetyAndSecurity.smokeDetectors.lastTested}</p>
       </div>
 
       <h2>Outdoor Spaces</h2>
@@ -155,17 +155,17 @@ const Dashboard = () => {
           ))}
         </ul>
         <h3>Lawn Care Schedule</h3>
-        <p>{homeInfo.outdoorSpaces.lawnCareSchedule}</p>
+        <p>{homeInfo.outdoorSpaces.lawnCareSchedule || 'N/A'}</p>
         <h3>Pool Maintenance</h3>
-        <p>Frequency: {homeInfo.outdoorSpaces.poolMaintenance.frequency}, Last Completed: {homeInfo.outdoorSpaces.poolMaintenance.lastCompleted}</p>
+        <p>Frequency: {homeInfo.outdoorSpaces.poolMaintenance.frequency || 'N/A'}, Last Completed: {homeInfo.outdoorSpaces.poolMaintenance.lastCompleted || 'N/A'}</p>
       </div>
 
       <h2>Energy Consumption</h2>
       <div>
         <h3>Utility Usage History</h3>
-        <p>Electricity: {homeInfo.energyConsumption.utilityUsageHistory.electricity}, Water: {homeInfo.energyConsumption.utilityUsageHistory.water}</p>
+        <p>Electricity: {homeInfo.energyConsumption.utilityUsageHistory.electricity || 'N/A'}, Water: {homeInfo.energyConsumption.utilityUsageHistory.water || 'N/A'}</p>
         <h3>Solar Panel Info</h3>
-        <p>Installed: {homeInfo.energyConsumption.solarPanelInfo.installed ? 'Yes' : 'No'}, Capacity: {homeInfo.energyConsumption.solarPanelInfo.capacity}</p>
+        <p>Installed: {homeInfo.energyConsumption.solarPanelInfo.installed ? 'Yes' : 'No'}, Capacity: {homeInfo.energyConsumption.solarPanelInfo.capacity || 'N/A'}</p>
       </div>
     </div>
   );
