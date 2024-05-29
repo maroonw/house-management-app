@@ -13,7 +13,9 @@ app.use(express.json());
 
 // Routes
 const authRoutes = require('./routes/auth');
+const homeRoutes = require('./routes/home');
 app.use('/api/auth', authRoutes);
+app.use('/api/home', homeRoutes);
 
 // Basic route
 app.get('/', (req, res) => {
